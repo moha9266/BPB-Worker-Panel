@@ -1384,7 +1384,7 @@ const buildWarpOutbounds = async (env, remoteDNS, localDNS, blockAds, bypassIran
             ...singboxOutbound,
             server: endpoint.includes('[') ? endpoint.match(ipv6Regex)[1] : endpoint.split(':')[0],
             server_port: endpoint.includes('[') ? +endpoint.match(portRegex)[0] : +endpoint.split(':')[1],
-            tag: `💦 Warp ${index + 1} 🇮🇷`
+            tag: `Warp ${index + 1} 🇮🇷`
         });
     })
     
@@ -1439,7 +1439,7 @@ const buildWoWOutbounds = async (env, remoteDNS, localDNS, blockAds, bypassIran,
             singboxOutbound.peer_public_key = warpConfigs[i].account.config.peers[0].public_key;
             singboxOutbound.reserved = warpConfigs[i].account.config.client_id;
             singboxOutbound.private_key = warpConfigs[i].privateKey;
-            singboxOutbound.tag = i === 1 ? `warp-ir_${index + 1}` : `💦 WoW ${index + 1} 🌍`;    
+            singboxOutbound.tag = i === 1 ? `warp-ir_${index + 1}` : `WoW ${index + 1} 🌍`;    
             
             if (i === 0) {
                 singboxOutbound.detour = `warp-ir_${index + 1}`;
@@ -1793,11 +1793,11 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
             <tr>
                 <td>
                     ${config.address === 'Best-Ping' 
-                        ? `<div  style="justify-content: center;"><span><b>💦 Best-Ping 💥</b></span></div>` 
+                        ? `<div  style="justify-content: center;"><span><b>BestPing</b></span></div>` 
                         : config.address === 'WorkerLess'
-                            ? `<div  style="justify-content: center;"><span><b>💦 WorkerLess ⭐</b></span></div>`
+                            ? `<div  style="justify-content: center;"><span><b>WorkerLess</b></span></div>`
                             : config.address === 'Best-Fragment'
-                                ? `<div  style="justify-content: center;"><span><b>💦 Best-Fragment 😎</b></span></div>`
+                                ? `<div  style="justify-content: center;"><span><b>Fragment</b></span></div>`
                                 : config.address
                     }
                 </td>
@@ -3195,11 +3195,11 @@ const singboxConfigTemp = {
         {
             type: "selector",
             tag: "proxy",
-            outbounds: ["💦 Best-Ping 💥"]
+            outbounds: ["BestPing"]
         },
         {
             type: "urltest",
-            tag: "💦 Best-Ping 💥",
+            tag: "BestPing",
             outbounds: [],
             url: "https://www.gstatic.com/generate_204",
             interval: "30s",
